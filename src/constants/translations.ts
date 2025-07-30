@@ -30,7 +30,7 @@ In my free time, I enjoy making music and staying active through sports(chess, t
         title: "LUKIOL Engineering",
         role: "Frontend Developer",
         description:
-          "Developed integrated modeling tools using React, TypeScript, Tailwind, SVG, and advanced UI logic.",
+          "Developed integrated modeling tools using React, TypeScript, Tailwind,  SVG, and advanced UI logic.",
       },
       {
         year: "2021–2023",
@@ -65,6 +65,7 @@ In my free time, I enjoy making music and staying active through sports(chess, t
             "Node.js",
             "MongoDB",
             "Docker",
+            "CSS-Module",
           ],
           link: "https://github.com/Denkut/UpFood",
         },
@@ -75,7 +76,7 @@ In my free time, I enjoy making music and staying active through sports(chess, t
             en: "A news feed project using React and modern frontend tooling.",
             ru: "Новостной сервис на React с современным фронтендом.",
           },
-          tech: ["React", "Vite", "Tailwind"],
+          tech: ["React", "Vite", "Tailwind", "Redux"],
           link: "https://github.com/Denkut/news-reactify",
         },
         {
@@ -171,6 +172,7 @@ In my free time, I enjoy making music and staying active through sports(chess, t
             "Node.js",
             "MongoDB",
             "Docker",
+            "CSS-Module",
           ],
           link: "https://github.com/Denkut/UpFood",
         },
@@ -181,7 +183,7 @@ In my free time, I enjoy making music and staying active through sports(chess, t
             en: "A news feed project using React and modern frontend tooling.",
             ru: "Новостной сервис на React с современным фронтендом.",
           },
-          tech: ["React", "Vite", "Tailwind"],
+          tech: ["React", "Vite", "Tailwind", "Redux"],
           link: "https://github.com/Denkut/news-reactify",
         },
         {

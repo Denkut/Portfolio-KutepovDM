@@ -52,6 +52,23 @@ In my free time, I enjoy making music and staying active through sports(chess, t
       view: "View project",
       items: [
         {
+          id: "3d-shoe-shop",
+          name: "3d-shoe-shop",
+          description: {
+            en: "3D Sneakers Store. 3D sneakers model with individual design of each part.",
+            ru: "3D магазин кросовок. 3D-модель кросовок с кастомизацией каждый части.",
+          },
+          tech: [
+            "React",
+            "Three.js",
+            "Tanstack Table",
+            "Vite",
+            "Redux",
+            "TypeScript",
+          ],
+          link: "https://denkut.github.io/3D-shoe-customizer",
+        },
+        {
           id: "upfood",
           name: "UpFood",
           description: {
@@ -69,6 +86,7 @@ In my free time, I enjoy making music and staying active through sports(chess, t
           ],
           link: "https://github.com/Denkut/UpFood",
         },
+
         {
           id: "news",
           name: "News",
@@ -159,6 +177,23 @@ In my free time, I enjoy making music and staying active through sports(chess, t
       view: "Посмотреть проект",
       items: [
         {
+          id: "3d-shoe-shop",
+          name: "3d-shoe-shop",
+          description: {
+            en: "3D Sneakers Store. 3D sneakers model with individual design of each part.",
+            ru: "3D магазин кросовок. 3D-модель кросовок с кастомизацией каждый части.",
+          },
+          tech: [
+            "React",
+            "Three.js",
+            "Tanstack Table",
+            "Vite",
+            "Redux",
+            "TypeScript",
+          ],
+          link: "https://denkut.github.io/3D-shoe-customizer",
+        },
+        {
           id: "upfood",
           name: "UpFood",
           description: {
@@ -176,6 +211,7 @@ In my free time, I enjoy making music and staying active through sports(chess, t
           ],
           link: "https://github.com/Denkut/UpFood",
         },
+
         {
           id: "news",
           name: "News",

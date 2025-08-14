@@ -20,7 +20,7 @@ export const Header = () => {
         <img
           src={avatar}
           alt="Denis Kutepov"
-          className="w-10 h-10 rounded-full border border-primary object-cover"
+          className="w-16 h-16 rounded-full border border-primary object-cover"
         />
         <span className="hidden sm:inline">Denis Kutepov</span>
       </a>

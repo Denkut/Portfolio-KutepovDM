@@ -35,10 +35,10 @@ export const Footer = () => {
             href="https://github.com/Denkut"
             target="_blank"
             rel="noopener noreferrer"
-            className="transition hover:scale-110"
+            className="transition hover:scale-110 р"
             aria-label="GitHub"
           >
-            <FaGithub className="text-xl text-primary" />
+            <FaGithub className="text-3xl text-primary " />
           </a>
           <a
             href="https://t.me/DenKutM"
@@ -47,7 +47,7 @@ export const Footer = () => {
             className="transition hover:scale-110"
             aria-label="Telegram"
           >
-            <FaTelegramPlane className="text-xl text-primary" />
+            <FaTelegramPlane className="text-3xl text-primary" />
           </a>
         </div>
       </div>

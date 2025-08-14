@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { FiArrowDown } from "react-icons/fi";
 import { motion, AnimatePresence } from "framer-motion";
 import { useLanguage } from "../context";
 import { translations } from "../constants";
@@ -18,6 +19,7 @@ export const Home = () => {
   const [isSliderOpen, setIsSliderOpen] = useState(false);
   const [avatarIndex, setAvatarIndex] = useState(0);
   const [sliderIndex, setSliderIndex] = useState(0);
+  const [isArrowHidden, setIsArrowHidden] = useState(false);
 
   const next = () => setSliderIndex((prev) => (prev + 1) % sliderImages.length);
   const prev = () =>
@@ -33,6 +35,17 @@ export const Home = () => {
     return () => clearInterval(interval);
   }, []);
 
+  const scrollToNextSection = () => {
+    document.getElementById("about")?.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+
+    setIsArrowHidden(true);
+
+    localStorage.setItem("arrowClicked", "true");
+  };
+
   return (
     <section
       id="home"
@@ -41,7 +54,7 @@ export const Home = () => {
       <motion.img
         src={avatarImages[avatarIndex]}
         alt={`Avatar ${avatarIndex + 1}`}
-        className="w-36 h-36 md:w-48 md:h-48 rounded-full border-4 border-primary shadow-lg object-cover mb-6 cursor-pointer transition-transform"
+        className="w-40 h-40 md:w-60 md:h-60 rounded-full border-4 border-primary shadow-lg object-cover mb-6 cursor-pointer transition-transform"
         initial={{ opacity: 0, scale: 0.9 }}
         whileInView={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.8, delay: 0.2 }}
@@ -52,7 +65,7 @@ export const Home = () => {
       />
 
       <motion.h1
-        className="text-3xl md:text-5xl font-bold mb-2 text-primary"
+        className="text-3xl md:text-5xl font-bold mb-4 text-primary mb "
         initial={{ opacity: 0, y: -20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.2 }}
@@ -66,11 +79,14 @@ export const Home = () => {
         whileInView={{ opacity: 1 }}
         transition={{ duration: 0.8, delay: 0.4 }}
       >
-        {t.role}
+        <span className="text-4xl bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent bg-[length:200%_100%] animate-gradient">
+          {t.name}
+        </span>
+        <span className="text-muted-foreground ml-2">{t.role}</span>
       </motion.h2>
 
       <motion.p
-        className="max-w-lg text-base md:text-lg text-gray-700 dark:text-gray-300 mb-6"
+        className="max-w-lg text-xl md:text-xl text-gray-800 dark:text-gray-300 mb-6"
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.6 }}
@@ -81,13 +97,63 @@ export const Home = () => {
       <motion.a
         href={import.meta.env.BASE_URL + "resume.pdf"}
         download
-        className="inline-block px-6 py-2 bg-primary text-white dark:text-black font-medium rounded-full shadow-md hover:bg-opacity-90 transition"
+        className="inline-block px-6 py-2 mb-20 bg-primary text-white dark:text-black font-medium rounded-full shadow-md hover:bg-opacity-90 transition"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ duration: 0.8, delay: 0.8 }}
       >
         {t.resume}
       </motion.a>
+
+      {!isArrowHidden && (
+        <motion.div
+          initial={{ opacity: 0, y: 10 }}
+          animate={{
+            opacity: 1,
+            y: 0,
+            transition: { delay: 1.2 },
+          }}
+          className="mb-2 text-sm font-medium text-primary/80 dark:text-blue-300 flex items-center gap-2"
+        >
+          <span className="animate-pulse"></span>
+          {t.exploreMore}
+          <span className="animate-pulse"></span>
+        </motion.div>
+      )}
+      <AnimatePresence>
+        {!isArrowHidden && (
+          <motion.button
+            onClick={scrollToNextSection}
+            initial={{ opacity: 1, scale: 1 }}
+            exit={{
+              opacity: 0,
+              y: -30,
+              transition: { duration: 0.4, ease: "easeOut" },
+            }}
+            animate={{
+              y: [0, -15, 0],
+              opacity: [0.7, 1, 0.7],
+              transition: {
+                duration: 1.8,
+                repeat: Infinity,
+                ease: "easeInOut",
+              },
+            }}
+            whileTap={{ scale: 0.9 }}
+            className="mt-6 w-14 h-14 rounded-full 
+                      bg-primary/20 dark:bg-primary/10 backdrop-blur-sm
+                      flex flex-col items-center justify-center 
+                      hover:bg-primary/30
+                      active:scale-95
+                      transition-all duration-300
+                      border border-primary/30
+                      mx-auto
+                      group"
+          >
+            <FiArrowDown className="text-2xl text-primary dark:text-blue-300 group-hover:text-white" />
+          </motion.button>
+        )}
+      </AnimatePresence>
 
       <AnimatePresence>
         {isSliderOpen && (

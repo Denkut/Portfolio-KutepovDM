@@ -6,10 +6,12 @@ export const translations = {
     contact: "Contact",
     hobbies: "Hobbies",
     homeSection: {
-      welcome: "Hi, I'm Denis Kutepov",
+      welcome: "I am glad to welcome you on my website!",
+      name: "Im Denis Kutepov -",
       role: "Frontend Developer",
       description: "I build beautiful and functional web experiences.",
       resume: "Download Resume",
+      exploreMore: "More awesome projects below!",
     },
     aboutSection: {
       title: "About Me",
@@ -131,10 +133,12 @@ In my free time, I enjoy making music and staying active through sports(chess, t
     contact: "Контакты",
     hobbies: "Хобби",
     homeSection: {
-      welcome: "Привет, я Денис Кутепов",
+      welcome: "Рад приветствовать тебя на моём сайте!",
+      name: "Я Денис Кутепов -",
       role: "Frontend-разработчик",
-      description: "Я создаю красивые и функциональные веб-решения.",
+      description: "Создаю красивые и функциональные веб-решения.",
       resume: "Скачать резюме",
+      exploreMore: "Ещё больше крутых проектов ниже!",
     },
     aboutSection: {
       title: "Обо мне",

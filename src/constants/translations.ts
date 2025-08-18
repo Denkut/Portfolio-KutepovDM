@@ -174,7 +174,7 @@ In my free time, I enjoy making music and staying active through sports(chess, t
       },
       {
         year: "2022–2023",
-        title: "Result Univirsity",
+        title: "Result University",
         role: "Fullstack-разработчик",
         description: [
           "Разработал full-stack приложение (авторизация, корзина, админпанель).",

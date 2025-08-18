@@ -73,11 +73,21 @@ export const About = () => {
             <div className="absolute -left-[10px] top-2 w-4 h-4 bg-primary rounded-full shadow" />
             <div className="ml-4">
               <h4 className="text-lg font-semibold text-muted-foreground">
-                {item.year} — {item.title}
+                {item.role}
               </h4>
-              <p className="text-sm italic mb-1">{item.role}</p>
-              <p className="text-sm text-muted-foreground">
-                {item.description}
+              {Array.isArray(item.description) ? (
+                <ul className="list-disc list-inside text-sm text-muted-foreground italic mb-2 space-y-1">
+                  {item.description.map((desc, i) => (
+                    <li key={i}>{desc}</li>
+                  ))}
+                </ul>
+              ) : (
+                <p className="text-sm italic text-muted-foreground mb-2">
+                  {item.description}
+                </p>
+              )}
+              <p className="text-lg font-bold text-muted-foreground text-primary dark:text-blue-300">
+                {item.year} — {item.title}
               </p>
             </div>
           </motion.div>

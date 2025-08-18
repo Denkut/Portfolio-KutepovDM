@@ -1,12 +1,13 @@
 import { useEffect, useRef, useState } from "react";
 import { HiVolumeUp, HiVolumeOff } from "react-icons/hi";
 import clsx from "clsx";
-import techno from "../../public/audio/techno.mp3"; // adjust path as needed
 import { eventBus } from "../constants";
 
 export const MusicToggle = () => {
   const [isPlaying, setIsPlaying] = useState(true);
   const audioRef = useRef<HTMLAudioElement | null>(null);
+
+  const techno = `${import.meta.env.BASE_URL}audio/techno.mp3`;
 
   useEffect(() => {
     const audio = new Audio(techno);
@@ -14,14 +15,12 @@ export const MusicToggle = () => {
     audio.volume = 0.3;
     audioRef.current = audio;
 
-    // автозапуск после первого клика
     const tryPlay = () => {
       if (audioRef.current && isPlaying)
         audioRef.current.play().catch(() => {});
     };
     document.addEventListener("click", tryPlay, { once: true });
 
-    // слушаем события от плеера
     const onPlaylist = (e: Event) => {
       const detail = (e as CustomEvent).detail;
       if (audioRef.current) {
@@ -32,15 +31,18 @@ export const MusicToggle = () => {
     eventBus.addEventListener("playlist-play", onPlaylist as EventListener);
 
     return () => {
-      audio.pause();
-      audio.currentTime = 0;
+      const audio = audioRef.current;
+      if (audio) {
+        audio.pause();
+        audio.currentTime = 0;
+      }
       document.removeEventListener("click", tryPlay);
       eventBus.removeEventListener(
         "playlist-play",
         onPlaylist as EventListener
       );
     };
-  }, [isPlaying]);
+  }, [isPlaying, techno]);
 
   const toggleAudio = () => {
     if (!audioRef.current) return;

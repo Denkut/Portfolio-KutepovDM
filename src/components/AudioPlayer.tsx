@@ -8,6 +8,7 @@ import {
   FaHeart,
 } from "react-icons/fa";
 import { tracks, eventBus } from "../constants";
+import { Track } from "../types";
 
 const STORAGE_KEY = "likedTrackSrcs";
 
@@ -21,7 +22,9 @@ export const AudioPlayer = () => {
   const [likedMap, setLikedMap] = useState<Record<string, boolean>>({});
 
   const audioRef = useRef<HTMLAudioElement | null>(null);
-  const track = tracks[currentTrackIndex];
+  const track = tracks[currentTrackIndex] as Track;
+  const isLiked = !!likedMap[track.src];
+  const displayLikes = track.likes + (isLiked ? 1 : 0);
 
   const formatTime = (time: number) => {
     const mins = Math.floor(time / 60);
@@ -112,12 +115,10 @@ export const AudioPlayer = () => {
     if (raw) setLikedMap(JSON.parse(raw));
   }, []);
 
-  // Сохранение лайков в localStorage
   useEffect(() => {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(likedMap));
   }, [likedMap]);
 
-  // Переключатель лайка
   const toggleLike = () => {
     setLikedMap((prev) => {
       const next = { ...prev, [track.src]: !prev[track.src] };
@@ -125,8 +126,6 @@ export const AudioPlayer = () => {
       return next;
     });
   };
-
-  const thisTrackLikes = likedMap[track.src] ? 1 : 0;
 
   return (
     <div className="w-full max-w-md mx-auto bg-white dark:bg-zinc-800 rounded-2xl shadow-2xl overflow-hidden p-6 space-y-6 text-center">
@@ -192,15 +191,15 @@ export const AudioPlayer = () => {
         <button
           onClick={toggleLike}
           className={`
-            ${likedMap[track.src] ? "text-red-500" : "text-muted-foreground"}
+            ${isLiked ? "text-red-500" : "text-muted-foreground"}
             hover:text-red-500 transition text-2xl
           `}
-          aria-label={likedMap[track.src] ? "Unlike" : "Like"}
+          aria-label={isLiked ? "Unlike" : "Like"}
         >
           <FaHeart />
         </button>
         <span className="text-sm text-muted-foreground">
-          {thisTrackLikes} {thisTrackLikes === 1 ? "Like" : "Likes"}
+          {displayLikes} {displayLikes === 1 ? "Like" : "Likes"}
         </span>
       </div>
 

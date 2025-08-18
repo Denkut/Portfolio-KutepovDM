@@ -12,15 +12,15 @@ export const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <header className="fixed top-0 left-0 w-full z-50 bg-white dark:bg-background shadow-md text-black dark:text-foreground px-4 py-8 flex justify-between items-center">
+    <header className="fixed top-0 left-0 w-full z-50 bg-white dark:bg-background shadow-md text-black dark:text-foreground px-4 py-6 sm:py-6 md:py-8 flex justify-between items-center">
       <a
         href="#home"
-        className="flex items-center gap-3 text-lg font-bold text-primary transition duration-200 ease-in-out cursor-pointer"
+        className="flex items-center gap-3 text-lg font-bold text-primary transition duration-200 ease-in-out cursor-pointer "
       >
         <img
           src={avatar}
           alt="Denis Kutepov"
-          className="w-16 h-16 rounded-full border border-primary object-cover"
+          className="w-12 h-12 sm:w-16 sm:h-16 rounded-full border border-primary object-cover"
         />
         <span className="hidden sm:inline">Denis Kutepov</span>
       </a>

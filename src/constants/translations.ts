@@ -28,25 +28,32 @@ In my free time, I enjoy making music and staying active through sports(chess, t
     },
     timeline: [
       {
-        year: "2024–Present",
-        title: "LUKIOL Engineering",
+        year: "2023–Present",
+        title: "LUKOIL-Engineering",
         role: "Frontend Developer",
-        description:
-          "Developed integrated modeling tools using React, TypeScript, Tailwind,  SVG, and advanced UI logic.",
+        description: [
+          "Developed a visual modeling module (drag-and-drop) for a corporate application.",
+          "Set up two-way communication with the backend (API, MongoDB) for processing engineering data.",
+          "Ensured full type safety and implemented a modular architecture.",
+          "Results: Reduced model creation time by 3x; improved interface usability by 40%.",
+        ],
       },
       {
-        year: "2021–2023",
-        title: "Freelance / Hackathons",
+        year: "2022–2023",
+        title: "Result University",
         role: "Fullstack Developer",
-        description:
-          "Built e-commerce and news apps using React, Redux, Node.js, MongoDB, Docker.",
+        description: [
+          "Built a full-stack application (authentication, shopping cart, admin panel).",
+          "Configured a REST API using Node.js with MongoDB and a Docker-based environment.",
+          "Results: Implemented an order system with cost calculation and promo code support.",
+        ],
       },
       {
-        year: "2019–2021",
-        title: "Self-Taught & Pet Projects",
-        role: "Junior Developer",
+        year: "2019–2022",
+        title: "Self-Education and Pet Projects",
+        role: "Developer",
         description:
-          "Learned JavaScript, built first projects, and dove deep into the React ecosystem.",
+          "Studied JavaScript, built first projects, and immersed myself in the React ecosystem.",
       },
     ],
     projectsSection: {
@@ -155,23 +162,30 @@ In my free time, I enjoy making music and staying active through sports(chess, t
     },
     timeline: [
       {
-        year: "2024–настоящее время",
+        year: "2023–настоящее время",
         title: "ЛУКОЙЛ-Инжиниринг",
         role: "Frontend-разработчик",
-        description:
-          "Разработка модуля интегрированного моделирования. React, TypeScript, Tailwind, SVG-графика, сложная логика интерфейса.",
+        description: [
+          "Разработал модуль визуального моделирования (drag-and-drop) для корпоративного приложения.",
+          "Настроил двустороннюю связь с backend (API, MongoDB) для обработки инженерных данных.",
+          "Обеспечил полную типизацию и модульную архитектуру.",
+          "Результаты: Сократил время создания моделей в 3 раза; повысил удобство интерфейса на 40%.",
+        ],
       },
       {
-        year: "2021–2023",
-        title: "Фриланс / Хакатоны",
+        year: "2022–2023",
+        title: "Result Univirsity",
         role: "Fullstack-разработчик",
-        description:
-          "Создание e-commerce и новостных приложений. React, Redux, Node.js, MongoDB, Docker.",
+        description: [
+          "Разработал full-stack приложение (авторизация, корзина, админпанель).",
+          " Настроил REST API на Node.js с MongoDB и Docker-окружением.",
+          "Результаты: Внедрил систему заказов с расчетом стоимости и промокодами.",
+        ],
       },
       {
-        year: "2019–2021",
+        year: "2019–2022",
         title: "Самообучение и pet-проекты",
-        role: "Junior-разработчик",
+        role: "Разработчик",
         description:
           "Изучение JavaScript, построение первых проектов, погружение в экосистему React.",
       },
